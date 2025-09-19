@@ -1,0 +1,157 @@
+%Dokumentklasse
+\documentclass[a4paper,12pt,listof=totoc, bibliography=totoc]{scrreprt}
+\usepackage[left= 2.5cm,right = 2cm, bottom = 3 cm, top = 2cm]{geometry}
+%\usepackage[onehalfspacing]{setspace}
+% ============= Packages =============
+
+% subsubsection wird im Inhaltverzeichnis angezeigt
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Dokumentinformationen
+\usepackage[
+	pdftitle={},
+	pdfsubject={},
+	pdfauthor={},
+	pdfkeywords={}
+	pdftex=true, 
+	colorlinks=true,
+ 	breaklinks=true,
+	citecolor=black,
+	linkcolor=black,	
+	menucolor=black,	
+	urlcolor=black
+]{hyperref}
+
+
+% ============= Packages =============
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{graphicx, subfigure}
+\graphicspath{{img/}}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage{xcolor} % für verschiedene Farben
+\usepackage{soul} % zum durchstreichen
+\usepackage{transparent}
+\usepackage{listings}
+\usepackage[acronym, toc, nopostdot, nonumberlist]{glossaries}
+\usepackage[automake]{glossaries-extra}
+\usepackage[style=ieee]{biblatex}
+\usepackage{todonotes}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{colortbl}
+\usepackage{svg}
+\usepackage{booktabs}
+\usepackage[normalem]{ulem}
+
+%Serifenlose Schrift
+\renewcommand{\familydefault}{\sfdefault}
+%Serifenlose Kapitälchen
+\usepackage{kpfonts}
+
+% zusätzliche Schriftzeichen der American Mathematical Society
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+% nicht einrücken nach Absatz
+\setlength{\parindent}{0pt}
+
+
+% ============= Kopf- und Fußzeile =============
+\pagestyle{fancy}
+%
+\lhead{}
+\chead{}
+\rhead{\slshape \leftmark}
+%%
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+%%
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ============= Package Einstellungen & Sonstiges ============= 
+
+%Use bibliography
+\bibliography{literature} 
+
+%Use Glossaries
+\makeglossaries
+%\makenoidxglossaries
+
+%Besondere Trennungen
+\hyphenchar\font=\string"7F
+\hyphenation{De-zi-mal-tren-nung St-rei-fen-licht-scan-nern Routing-Tabel-le Gnu-tel-la-Netz-werk}
+
+
+%römische Aufzählungen mit \RM{Zahl}
+\newcommand{\RM}[1]{\MakeUppercase{\romannumeral #1}}
+
+% ===================== Page-numbering formatting ==========================
+\makeatletter
+\newcommand\frontmatter{%
+    \cleardoublepage
+  %\@mainmatterfalse
+  \pagenumbering{roman}}
+
+\newcommand\mainmatter{%
+    \cleardoublepage
+ % \@mainmattertrue
+  \pagenumbering{arabic}}
+
+\newcommand\backmatter{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+ % \@mainmatterfalse
+   }
+\makeatother
+
+% ============= Dokumentbeginn =============
+
+\begin{document}
+
+%----------------------------------------------------------------------%
+%      File Inclusion
+%----------------------------------------------------------------------%
+    \input{001_Frontpage.tex}
+\frontmatter
+    %\input{002_NonDisclosureNote.tex}
+    %\printglossary[type=\acronymtype, nonumberlist]
+    %\printglossaries
+    \input{100_Acronyms.tex}
+    \tableofcontents
+\mainmatter
+    \input{002_Chapter.tex}
+    \input{003_Picture.tex}
+    \input{004_Math.tex}
+    \input{005_Format.tex}
+    \input{006_Table.tex}
+    \input{007_Bonus.tex}
+    \input{008_Acronyms.tex}
+    \input{009_Cite.tex}
+    
+    
+    
+\backmatter
+    \printbibliography[heading=bibintoc,title={References}] 
+    \listoffigures
+    \listoftables
+%    \listoftodos
+
+%----------------------------------------------------------------------%
+%      End Document
+%----------------------------------------------------------------------%
+
+\end{document}

@@ -1,0 +1,74 @@
+\chapter{Tabellen}
+
+\section{Beispiel 1}
+
+Aus meiner Mastararbeit Beispiel \ref{tab:Software}
+
+\begin{table}[ht]
+  	\centering
+  	\begin{tabular}{@{}*{4}{l}@{}}
+  		\toprule
+  		    \textbf{Software} & \textbf{Version} & \textbf{Software} & \textbf{Version}\\ 
+  		\midrule
+  		    Tensorflow & 2.4.0 &  Numpy & 1.19.4 \\
+  		    Mininet & 2.3.0d6 & Pandas & 1.0.5 \\
+  		    Ryu Controller & 4.34 & Dash & 1.13.4 \\
+  		    Flask & 1.1.2 & Plotly & 5.1.0 \\
+  		    Flask-Restful & 0.3.8 &  &  \\
+  		\bottomrule
+  	\end{tabular}
+  	  	  \caption{Hauptsoftware, die verwendet wird}
+  \label{tab:Software}
+\end{table} 
+
+\section{Beispiel 2}
+
+IEE Paper Beispiel \ref{tab:cnn_sigmoid}
+
+\begin{table}[h]
+\caption{Architecture of the CNN SVM model}
+\label{tab:cnn_sigmoid}
+\centering
+\begin{tabular}{c l c} 
+\Xhline{1pt}
+\textbf{Block} & \multicolumn{1}{c}{\textbf{Layer}}  & \textbf{Activation}  \\ 
+\Xhline{1pt}
+1     & \begin{tabular}[c]{@{}l@{}}Convolution (32 x 3 x 3)\\MaxPooling (2,2)\end{tabular}  & ReLU                                                  \\ 
+\hline
+2     & \begin{tabular}[c]{@{}l@{}}Convolution (64 x 3 x 3)\\MaxPooling (2,2)\end{tabular}  & ReLU                                                  \\ 
+\hline
+3     & \begin{tabular}[c]{@{}l@{}}Convolution (126 x 3 x 3)\\MaxPooling (2,2)\end{tabular} & ReLU                                                  \\ 
+\hline
+4     & \begin{tabular}[c]{@{}l@{}}Convolution (128 x 3 x 3)\\MaxPooling (2,2)\end{tabular} & ReLU                                                  \\ 
+\hline
+5     & \begin{tabular}[c]{@{}l@{}}Flattening\\Dense (512)\\Dense (1)\end{tabular}          & \begin{tabular}[c]{@{}c@{}}ReLU\\Sigmoid\end{tabular}  \\
+\Xhline{1pt}
+\end{tabular}
+\end{table}
+
+
+\section{Beispiel 3}
+
+Eine farbige Tabelle \ref{tab:cnn_sigmoid_color}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|l|c|} 
+\hline
+\rowcolor{yellow}
+\textbf{Block} & \textbf{Layer}                                                                               & \textbf{Activation}                                            \\ 
+\hline
+1     & \begin{tabular}[c]{@{}l@{}}Convolution (32 x 3 x 3)\\MaxPooling (2,2)\end{tabular}  & ReLU                                                  \\ 
+\hline
+2     & \begin{tabular}[c]{@{}l@{}}Convolution (64 x 3 x 3)\\MaxPooling (2,2)\end{tabular}  & ReLU                                                  \\ 
+\hline
+3     & \begin{tabular}[c]{@{}l@{}}Convolution (126 x 3 x 3)\\MaxPooling (2,2)\end{tabular} & ReLU                                                  \\ 
+\hline
+4     & \begin{tabular}[c]{@{}l@{}}Convolution (128 x 3 x 3)\\MaxPooling (2,2)\end{tabular} & ReLU                                                  \\ 
+\hline
+5     & \begin{tabular}[c]{@{}l@{}}Flattening\\Dense (512)\\Dense (1)\end{tabular}          & \begin{tabular}[c]{@{}c@{}}ReLU\\Sigmoid\end{tabular}  \\
+\hline
+\end{tabular}
+\caption{Architecture of the CNN SVM model}
+\label{tab:cnn_sigmoid_color}
+\end{table}
